@@ -29,13 +29,14 @@ class Solution {
         Set<Character> substring = new HashSet<Character> ();
         
         while (end != chars.length) {
-            if (substring.contains(chars[end])) {
+            char check = chars[end];
+            if (substring.contains(check)) {
                 substring.remove(chars[start]);
                 start += 1;
             } else {
-                substring.add(chars[end]);
+                substring.add(check);
                 end += 1;
-                max = max>substring.size() ? max : substring.size();
+                max = max>end-start ? max : end-start;
             }
         }
         return max;
