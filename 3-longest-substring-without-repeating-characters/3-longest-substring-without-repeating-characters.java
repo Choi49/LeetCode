@@ -24,7 +24,6 @@ class Solution {
         int max = 0;
         int start = 0;
         int end = 0;
-        int i = 0;
         char[] chars = s.toCharArray();
         Set<Character> substring = new HashSet<Character> ();
         
