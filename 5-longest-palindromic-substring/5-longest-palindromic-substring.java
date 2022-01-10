@@ -20,21 +20,6 @@ class Solution {
             
             //for even palindrome
             j=0;
-            if (i-1 >=0 && chars[i-1] == chars[i]) {
-                while (i-j-1 >= 0 && i + j < chars.length) {
-                    if (chars[i-j-1] == chars[i+j]) {
-                    if (max < 2*j + 2) {
-                        result = String.copyValueOf(chars, i-j-1, 2*j+2);
-                        max = 2*j+2;
-                    } 
-                } else {
-                    break;
-                }
-                j++;
-                }
-            }
-            
-            j=0;
             if (i+1 <chars.length && chars[i+1] == chars[i]) {
                 while (i-j >= 0 && i + j+1 < chars.length) {
                     if (chars[i-j] == chars[i+j+1]) {
