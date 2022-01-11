@@ -61,11 +61,11 @@ class Solution {
             }
         }
         
-        String result = "";
+        StringBuilder result = new StringBuilder("");
         for (int i=0; i<numRows; i++) {
-            result += rows[i];
+            result.append(rows[i]);
         }
-        return result;
+        return result.toString();
     }
     
 }
