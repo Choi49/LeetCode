@@ -38,6 +38,7 @@
 
 class Solution {
     public String convert(String s, int numRows) {
+        // if numRows == 1, then we can just return s itself.
         if(numRows == 1) return s;
         
         StringBuilder[] rows = new StringBuilder[numRows];
@@ -50,10 +51,13 @@ class Solution {
         }
         
         for (int i=0; i<sArray.length; i++) {
+            // going down the rows
             if (downflag) {
                 rows[rowPointer++].append(sArray[i]);
                 downflag = rowPointer == numRows-1 ? false : true; 
-            } else {
+            } 
+            // going up the rows
+            else {
                 rows[rowPointer--].append(sArray[i]);
                 downflag = rowPointer == 0 ? true : false;
             }
