@@ -46,15 +46,11 @@
 
 class Solution {
     public int myAtoi(String s) {
+        s = s.trim();
         char[] chars = s.toCharArray();
         int result = 0;
         int sign = 1;
         int i=0;
-        //step 1
-        while (i < chars.length) {
-            if(!Character.isWhitespace(chars[i])) break;
-            i++;
-        }
         
         //step 2
         if (i >= chars.length) {
@@ -70,6 +66,7 @@ class Solution {
         
         //step 3
         while (i < chars.length) {
+            //if 0 <= char - '0' <10, then it is digit charcter 
             int digit = chars[i]-'0';
             if (digit >=10 || digit < 0) {
                 break;
