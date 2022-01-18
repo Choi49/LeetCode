@@ -30,7 +30,7 @@ class Solution {
             pre_symbol_value = values[pre];
         }
         
-        if (num < symbol_value - pre_symbol_value) return num;
+        // if (num < symbol_value - pre_symbol_value) return num;
         
         
         int quote = num / symbol_value;
