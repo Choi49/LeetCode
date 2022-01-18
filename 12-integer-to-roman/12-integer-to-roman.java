@@ -8,6 +8,9 @@ class Solution {
         
         for (int i = 6; i >= 0; i--){
             num = intToRomanChar(i, num, result);
+            if (num == 0) {
+                break;
+            }
         }
         
         return result.toString();
