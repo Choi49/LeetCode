@@ -3,24 +3,29 @@ class Solution {
     char romans[] = new char[] {'I','V','X','L','C','D','M'};
     int values[] = new int[] {1,5,10,50,100,500,1000};
     
-    public String intToRoman(int num) {
-        StringBuilder result = new StringBuilder();
+//     public String intToRoman(int num) {
+//         StringBuilder result = new StringBuilder();
         
-        for (int i = 6; i >= 0; i--){
-            num = intToRomanChar(i, num, result);
-            if (num == 0) {
-                break;
-            }
-        }
+//         for (int i = 6; i >= 0; i--){
+//             num = intToRomanChar(i, num, result);
+//             if (num == 0) {
+//                 break;
+//             }
+//         }
         
-        return result.toString();
-    }
+//         return result.toString();
+//     }
+    
+    public static String intToRoman(int num) {
+    String M[] = {"", "M", "MM", "MMM"};
+    String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+    return M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[num%10];
+}
     
     public int intToRomanChar(int i, int num, StringBuilder result) {
         int symbol_value = values[i];
-        
-        
-        
         char c = romans[i];
         char pre_c = '\0';
         int pre_symbol_value = 0;
