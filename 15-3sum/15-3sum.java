@@ -20,16 +20,13 @@ class Solution {
                 if (nums[i] + nums[j] + nums[k] == 0) {
                     result.add(List.of(nums[i],nums[j],nums[k]));
                     int tmp = nums[j];
-                    while (j < k && tmp == nums[j] ){
-                        j++;
-                    }
+                    while (j < k && tmp == nums[j] ) j++;
                 } else if (nums[i] + nums[j] + nums[k] > 0) {
-                    k--;
+                    int tmp = nums[k];
+                    while (j < k && tmp == nums[k] ) k--;
                 } else {
                     int tmp = nums[j];
-                    while (j < k && tmp == nums[j] ){
-                        j++;
-                    }
+                    while (j < k && tmp == nums[j] ) j++;
                 }
             }
         }
